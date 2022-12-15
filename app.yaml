@@ -1,0 +1,10 @@
+runtime: nodejs14
+handlers:
+# serve all static files with url ending with a file extension
+- url: /(.*\.css)
+  static_files: static/\1
+  upload: static/(.*\.css)
+# catch all handler to index.html
+- url: /.*
+  static_file: build/index.html
+  upload: build/index.html
